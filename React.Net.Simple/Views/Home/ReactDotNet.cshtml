@@ -1,0 +1,16 @@
+﻿@using React.AspNet
+@model React.Net.Simple.ViewModels.HomePageModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@Html.React("Header", Model.Header)
+
+@Html.React("Hero", Model.Hero)
+
+@Html.React("Intro", Model.Intro)
+
+@Html.React("Freetext", Model.Freetext)
+
+<script asp-append-version="true" src="/scripts/component.bundle.js"></script>
+@Html.ReactInitJavaScript()

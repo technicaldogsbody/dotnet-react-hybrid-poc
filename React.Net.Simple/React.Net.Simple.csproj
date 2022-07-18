@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="_client\.storybook\preview-head.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\scripts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="_client\.storybook\main.js" />
+    <None Include="_client\.storybook\preview.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="34.0.2" />
+    <PackageReference Include="React.AspNet" Version="5.2.12" />
+    <PackageReference Include="React.Router" Version="5.2.12" />
+    <PackageReference Include="JavaScriptEngineSwitcher.V8" Version="3.18.4" />
+    <PackageReference Include="Microsoft.ClearScript.V8.Native.linux-x64" Version="7.3.1" />
+    <PackageReference Include="Microsoft.ClearScript.V8.Native.osx-x64" Version="7.3.1" />
+    <PackageReference Include="Microsoft.ClearScript.V8.Native.win-x64" Version="7.3.1" />
+    <PackageReference Include="JavaScriptEngineSwitcher.Extensions.MsDependencyInjection" Version="3.3.0" />
+  </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <!--<Exec Command="npm i" WorkingDirectory="_client" />-->
+    <Exec Command="npm run pack-dev" WorkingDirectory="_client" />
+  </Target>
+
+</Project>

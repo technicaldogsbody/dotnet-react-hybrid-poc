@@ -1,0 +1,8 @@
+﻿@model React.Net.Simple.ViewModels.HomePageModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div data-component="HomePage" data-props='@Json.Serialize(Model)'></div>
+
+<script asp-append-version="true" src="/scripts/habitat.bundle.js"></script>

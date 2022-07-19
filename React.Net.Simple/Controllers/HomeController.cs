@@ -33,6 +33,11 @@ namespace React.Net.Simple.Controllers
             return View(GetModel());
         }
 
+        public IActionResult HabitatPage()
+        {
+            return View(GetModel());
+        }
+
         private static HomePageModel GetModel()
         {
             var header = new Header(
@@ -40,7 +45,7 @@ namespace React.Net.Simple.Controllers
                 "Technical Dogsbody");
 
             var hero = new Faker<Hero>()
-                .RuleFor(h => h.BackgroundUrl, f => f.Image.PicsumUrl(width: 1920, height: 1080))
+                .RuleFor(h => h.BackgroundUrl, f => f.Image.PlaceholderUrl(2000, 760))
                 .RuleFor(h => h.Heading, f => f.Company.CompanyName())
                 .RuleFor(h => h.Body, f => f.Company.CatchPhrase());
 

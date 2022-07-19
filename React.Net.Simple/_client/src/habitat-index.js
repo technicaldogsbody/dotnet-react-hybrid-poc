@@ -1,5 +1,6 @@
 ﻿import reactHabitat from "react-habitat";
 import * as components from "./Components";
+import homePage from "./Page/HomePage";
 
 class habitatApp extends reactHabitat.Bootstrapper {
     constructor() {
@@ -14,6 +15,8 @@ class habitatApp extends reactHabitat.Bootstrapper {
                 builder.register(components[key]).as(key);
             }
         }
+
+        builder.register(homePage).as("HomePage");
 
         // Finally, set the container:
         this.setContainer(builder.build());

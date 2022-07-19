@@ -11,9 +11,10 @@ class habitatApp extends reactHabitat.Bootstrapper {
         
         // Register a components:
         for (let key in components) {
-            if (components.hasOwnProperty(key)) {
+            // if (components.hasOwnProperty(key)) {
                 builder.register(components[key]).as(key);
-            }
+                // builder.registerAsync(() => System.import(components[key])).as(key);
+            // }
         }
 
         builder.register(homePage).as("HomePage");

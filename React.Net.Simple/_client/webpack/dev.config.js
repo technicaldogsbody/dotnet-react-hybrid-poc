@@ -1,6 +1,7 @@
-﻿const path = require('path');
+const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = [{
     entry: './src/component-index.js',
@@ -43,7 +44,8 @@ module.exports = [{
         new webpack.SourceMapDevToolPlugin({
             filename: '[name].map',
             exclude: ['vendor.js']
-        })
+        }),
+        new BundleAnalyzerPlugin({ analyzerPort: 3031 })
     ]
 },
 {
@@ -87,6 +89,7 @@ module.exports = [{
         new webpack.SourceMapDevToolPlugin({
             filename: '[name].map',
             exclude: ['vendor.js']
-        })
+        }),
+        new BundleAnalyzerPlugin({ analyzerPort: 3032 })
     ]
 }];

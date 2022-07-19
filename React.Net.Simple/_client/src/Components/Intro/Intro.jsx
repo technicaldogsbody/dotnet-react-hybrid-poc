@@ -13,9 +13,9 @@ const Intro = props => {
                     border: "1px dashed green",
                     color: "grey"
                 }}>
-                <h2 data-epi-property-name={props.introTitleName}>{props.introTitle}</h2>
+                <h2>{props.introTitle}</h2>
                 <hr />
-                <div data-epi-property-name={props.introTextName}>{renderHtml(props.introText)}</div>
+                <div>{renderHtml(props.introText)}</div>
                 <hr />
             </div>
         </div>

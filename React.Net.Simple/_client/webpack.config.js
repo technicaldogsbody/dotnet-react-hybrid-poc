@@ -4,7 +4,6 @@ const webpack = require('webpack');
 
 module.exports = [{
     entry: './src/component-index.js',
-    devtool: "eval-source-map",
     output: {
         filename: 'component.bundle.js',
         path: path.resolve(__dirname, '../wwwroot/scripts')
@@ -38,20 +37,14 @@ module.exports = [{
                 }
             })
         ]
-    },
-    plugins: [
-        new webpack.SourceMapDevToolPlugin({
-            filename: '[name].map',
-            exclude: ['vendor.js']
-        })
-    ]
+    }
 },
 {
     entry: './src/habitat-index.js',
-    devtool: "eval-source-map",
     output: {
         filename: 'habitat.bundle.js',
-        path: path.resolve(__dirname, '../wwwroot/scripts')
+        path: path.resolve(__dirname, '../wwwroot/scripts'),
+        publicPath: '/scripts/'
     },
     module: {
         rules: [
@@ -82,11 +75,5 @@ module.exports = [{
                 }
             })
         ]
-    },
-    plugins: [
-        new webpack.SourceMapDevToolPlugin({
-            filename: '[name].map',
-            exclude: ['vendor.js']
-        })
-    ]
+    }
 }];

@@ -13,7 +13,7 @@ const Freetext = props => {
                     border: "1px dashed lime",
                     color: "navy"
                 }}>
-                <div data-epi-property-name={props.bodyName}>{renderHtml(props.body)}</div>
+                <div>{renderHtml(props.body)}</div>
             </div>
         </div>
     );

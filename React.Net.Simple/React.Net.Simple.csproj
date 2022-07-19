@@ -33,7 +33,7 @@
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <!--<Exec Command="npm i" WorkingDirectory="_client" />-->
-    <Exec Command="npm run pack-dev" WorkingDirectory="_client" />
+    <Exec Command="npm run pack" WorkingDirectory="_client" />
   </Target>
 
 </Project>

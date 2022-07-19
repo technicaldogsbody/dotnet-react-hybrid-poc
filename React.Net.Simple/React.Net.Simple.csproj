@@ -29,11 +29,14 @@
     <PackageReference Include="Microsoft.ClearScript.V8.Native.osx-x64" Version="7.3.1" />
     <PackageReference Include="Microsoft.ClearScript.V8.Native.win-x64" Version="7.3.1" />
     <PackageReference Include="JavaScriptEngineSwitcher.Extensions.MsDependencyInjection" Version="3.3.0" />
+    <PackageReference Include="WebMarkupMin.AspNet.Brotli" Version="2.10.0" />
+    <PackageReference Include="WebMarkupMin.AspNetCore6" Version="2.11.0" />
+    <PackageReference Include="WebMarkupMin.NUglify" Version="2.11.0" />
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <!--<Exec Command="npm i" WorkingDirectory="_client" />-->
-    <Exec Command="npm run pack-dev" WorkingDirectory="_client" />
+    <Exec Command="npm run pack" WorkingDirectory="_client" />
   </Target>
 
 </Project>

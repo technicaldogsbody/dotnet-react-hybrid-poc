@@ -33,6 +33,11 @@ namespace React.Net.Simple.Controllers
             return View(GetModel());
         }
 
+        public IActionResult HybridPage2()
+        {
+            return View(GetModel());
+        }
+
         public IActionResult HabitatPage()
         {
             return View(GetModel());

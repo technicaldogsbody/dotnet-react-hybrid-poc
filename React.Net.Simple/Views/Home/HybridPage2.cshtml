@@ -1,0 +1,9 @@
+﻿@using React.AspNet
+@model React.Net.Simple.ViewModels.HomePageModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@Html.React("SecondPage", Model, serverOnly: true)
+
+<script asp-append-version="true" src="/scripts/habitat.bundle.js"></script>

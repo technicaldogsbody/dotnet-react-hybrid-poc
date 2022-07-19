@@ -1,6 +1,8 @@
 ﻿import reactHabitat from "react-habitat";
-import * as components from "./Components";
-import homePage from "./Page/HomePage";
+//import * as components from "./Components";
+//import hero from "./Components/Hero/Hero";
+//import banner from "./Components/Banner/Banner";
+//import homePage from "./Page/HomePage";
 
 class habitatApp extends reactHabitat.Bootstrapper {
     constructor() {
@@ -10,14 +12,20 @@ class habitatApp extends reactHabitat.Bootstrapper {
         const builder = new reactHabitat.ContainerBuilder();
         
         // Register a components:
-        for (let key in components) {
-            // if (components.hasOwnProperty(key)) {
-                builder.register(components[key]).as(key);
-                // builder.registerAsync(() => System.import(components[key])).as(key);
-            // }
-        }
+        //for (let key in components) {
+        //    if (components.hasOwnProperty(key)) {
+        //        builder.register(components[key]).as(key);
+        //    }
+        //}
 
-        builder.register(homePage).as("HomePage");
+        //builder.register(hero).as("Hero");
+        //builder.register(banner).as("Banner");
+
+        //builder.register(homePage).as("HomePage");
+
+        builder.registerAsync(() => System.import('./Components/Hero/Hero')).as('Hero');
+        builder.registerAsync(() => System.import('./Components/Banner/Banner')).as('Banner');
+        builder.registerAsync(() => System.import('./Page/HomePage')).as('HomePage');
 
         // Finally, set the container:
         this.setContainer(builder.build());

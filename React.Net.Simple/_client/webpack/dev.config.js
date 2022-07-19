@@ -5,7 +5,6 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = [{
     entry: './src/component-index.js',
-    devtool: "eval-source-map",
     output: {
         filename: 'component.bundle.js',
         path: path.resolve(__dirname, '../wwwroot/scripts')
@@ -50,10 +49,10 @@ module.exports = [{
 },
 {
     entry: './src/habitat-index.js',
-    devtool: "eval-source-map",
     output: {
         filename: 'habitat.bundle.js',
-        path: path.resolve(__dirname, '../wwwroot/scripts')
+        path: path.resolve(__dirname, '../wwwroot/scripts'),
+        publicPath: '/scripts/'
     },
     module: {
         rules: [

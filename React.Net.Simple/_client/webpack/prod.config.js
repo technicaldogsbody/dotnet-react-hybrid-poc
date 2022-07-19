@@ -1,4 +1,4 @@
-﻿const path = require('path');
+const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 
@@ -37,14 +37,13 @@ module.exports = [{
                 }
             })
         ]
-    }
+    },
 },
 {
     entry: './src/habitat-index.js',
     output: {
         filename: 'habitat.bundle.js',
-        path: path.resolve(__dirname, '../wwwroot/scripts'),
-        publicPath: '/scripts/'
+        path: path.resolve(__dirname, '../wwwroot/scripts')
     },
     module: {
         rules: [
@@ -75,5 +74,5 @@ module.exports = [{
                 }
             })
         ]
-    }
+    },
 }];

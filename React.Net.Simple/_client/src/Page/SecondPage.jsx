@@ -15,6 +15,7 @@ const SecondPage = props => {
                 }}>
 
                 <Components.Header {...props.header} />
+                <div data-component="Hero" data-props={JSON.stringify(props.hero)}></div>
                 <div data-component="Banner" data-props={JSON.stringify(props.hero)}></div>
                 <Components.Intro {...props.intro} />
                 <Components.Freetext {...props.freetext} />

@@ -7,7 +7,7 @@ module.exports = [{
     entry: './src/component-index.js',
     output: {
         filename: 'component.bundle.js',
-        path: path.resolve(__dirname, '../wwwroot/scripts')
+        path: path.resolve(__dirname, '../../wwwroot/scripts')
     },
     module: {
         rules: [
@@ -51,7 +51,7 @@ module.exports = [{
     entry: './src/habitat-index.js',
     output: {
         filename: 'habitat.bundle.js',
-        path: path.resolve(__dirname, '../wwwroot/scripts'),
+        path: path.resolve(__dirname, '../../wwwroot/scripts'),
         publicPath: '/scripts/'
     },
     module: {
